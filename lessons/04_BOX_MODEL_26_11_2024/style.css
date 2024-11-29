@@ -32,7 +32,8 @@ h1 {
 }
 
 .main{
-    position: relative;   
+    position: relative;
+    min-height: 400px;   
     
 }
 
