@@ -1,0 +1,47 @@
+.grid-container {
+  /* сделал контейнер grid */
+  display: grid;
+  /* пространство между контейнерами */
+  gap: 5px;
+  /* 1fr равен одному 'кусочку', если в схеме их несколько, то фреймы равны между собой */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 100px 200px 150px; */
+  /* задаем высоту каждого ряда */
+  grid-auto-rows: 30px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rosybrown;
+}
+
+.grid-container-adaptive {
+  display: grid;
+  /* в функцию repeat можно передать количество колонок и их размер */
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5px;
+  grid-auto-rows: 80px;
+}
+
+.grid-item-adaptive {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: coral; */
+  background-image: url(https://assets.science.nasa.gov/dynamicimage/assets/science/astro/universe/internal_resources/402/Carina_Nebula-1.jpeg?w=4096&format=jpeg&fit=clip&crop=faces%2Cfocalpoint);
+  background-size: cover;
+  background-position: center;
+}
+
+h4 {
+  margin: 0;
+}
+
+.img-container {
+  background-image: url(https://starwalk.space/gallery/images/what-is-space/1920x1080.jpg);
+}

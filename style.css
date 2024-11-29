@@ -1,6 +1,3 @@
-a{
-    color: black;
-}
 
 .main{
     display: flex;
@@ -13,4 +10,14 @@ a{
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+a{
+    color: black;
+}
+
+/* стили с псевдоклассом hover, применяются к элементу при наведении на него мышкой */
+a:hover{
+    text-decoration: underline;
+    color: blueviolet;
 }
