@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animal-gallery{
+    width: 75%;
+    min-height: 900px;
+    padding: 15px 0px;
+    border: 1.5px solid;
+    background-color: lightgrey;
+    /* задаем флекс для родителя позиционируемых элементов */
+    display: flex;
+    /* промежуток между флекс-элементами */
+    gap: 10px;
+    /* центровать флекс-элементы по главной оси*/
+    /* justify-content: center; */
+    /* сместить флекс-элементы к правому краю*/
+    /* justify-content: end; */
+    /* разделить равномерно свободное пространство между элементами*/
+    justify-content: center;
+    /* align-items управляет поведением флекс-элементов по поперечной оси */
+    align-items: center;
+    /* перенос карточек на новые строки */
+    flex-wrap: wrap;
+    /* отвечает за сгруппированное положение карточек при переносе карточек через flex-wrap */
+    align-content: center;
+}
+
+.animal-card > img{
+    width: 300px;
+}
+
+.animal-card{
+    /* margin-left: 15px; */
+    display: flex;
+    /* поменяли направление во флекс-контейнер (теперь главная ось отвечает за горизонталь) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    width: 350px;
+    height: 300px;
+}
+

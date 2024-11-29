@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <style>
+      h1 {
+        text-align: center;
+      }
+      body {
+        background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg);
+      }
+    </style> -->
+    <!-- 
+    ./ - нужно остаться в той же папке
+    ../ - нужно выйти во внешнюю папку
+    -->
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Form</title>
+  </head>
+  <!-- 
+  Где будет задаваться стилистика?
+1. Inline-styles (в той же строке, где и сам элемент);
+2. Отдельный тэг style;
+3. Отдельный файл (.css).
+
+  С помощью чего будет выбираться элемент(-ы) для настройки?
+  1. С помощью имени тэга
+  2. С помощью значения любого атрибута (class, id) -->
+  <body>
+    <!-- style="text-align: center" -->
+    <h1>Signup Form</h1>
+    <form>
+      <!-- Дефолтный блочный элемент - div -->
+      <!-- Дефолтный строчный элемент - span -->
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="Enter your name:" required />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="phone">Phone:</label>
+        <input
+          title="Example: +123-456-7890"
+          id="phone"
+          type="tel"
+          placeholder="Enter your phone:"
+          pattern="\+?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter your password:"
+          minlength="8"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="hobby">Hobby:</label>
+        <select id="hobby" required>
+          <option value="">Choose your hobby</option>
+          <option value="chess">Chess - best sport in the World</option>
+          <option value="football">Football - best sport in the World</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <br />
+
+      <div>
+        <label for="agree">I agree</label>
+        <input id="agree" type="checkbox" required />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="male">Male</label>
+        <input id="male" type="radio" name="gender" required />
+      </div>
+
+      <div>
+        <label for="female">Female</label>
+        <input id="female" type="radio" name="gender" required />
+      </div>
+
+      <br />
+
+      <button class="submit" type="submit">Finish</button>
+      <button class="reset" type="reset">Reset</button>
+    </form>
+  </body>
+</html>

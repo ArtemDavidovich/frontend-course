@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tmnt-gallery{
+    padding: 25px 25px;
+    display: flex;    
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.painter{
+    display: flex;
+    flex-direction: column;    
+    width: 350px;
+    align-items: center;    
+}
+
+.painter > img{
+    width: 350px;
+}
+

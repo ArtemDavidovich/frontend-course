@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>TRY A PIE</title>
+  </head>
+  <body>
+    <form>
+      <h2
+        style="          
+          border: 2px dotted;
+          padding: 5px;
+          display: inline-block;
+        "
+      >
+        Welcome to 'TRY A PIE' - a place where we bake PIES with great LOVE and
+        PLEASURE!
+      </h2>
+
+      <img
+        src="https://files.oaiusercontent.com/file-JbcZg62gm5q2iWm3BtWjEU?se=2024-11-24T14%3A20%3A07Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D71e5cd51-b269-4480-977a-3e82fd29d0dd.webp&sig=gieqF9ODJQAryTIWUUQjNPghvd4jmc/2Bhqu/4m9gc0%3D"
+        width="950px"
+        alt="Try_a_pie_order_page"
+      />
+
+      <h2 style="text-align: center;">ORDER ONE OF OUR <span style="color: indigo;">TREMENDOUS</span> PIES!!!</h2>      
+
+      <div class="form-pies">
+        <label for="meat_pie">
+          <img
+            src="https://i.ibb.co/QFz5xbG/DALL-E-2024-11-24-16-04-48-A-digital-illustration-of-a-savory-pie-filled-with-meat-baked-to-a-golden.webp"
+            height="250px"
+            alt="Meat_pie"
+          />
+          <br />
+          <input id="meat_pie" type="radio" name="pie" value="meat" required />
+          Meat pie
+        </label>
+
+        <label for="salmon_pie">
+          <img
+            src="https://i.ibb.co/dmdWwPy/DALL-E-2024-11-24-16-08-33-A-digital-illustration-of-a-savory-salmon-pie-baked-to-a-golden-brown-cru.webp"
+            height="250px"
+            alt="Salmon_pie"
+          />
+          <br />
+          <input id="salmon_pie" type="radio" name="pie" value="salmon" />
+          Salmon pie
+        </label>
+
+        <label for="cabbage_and_egg_pie">
+          <img
+            src="https://i.ibb.co/M76Zgyb/DALL-E-2024-11-24-16-08-36-A-digital-illustration-of-a-savory-pie-filled-with-cabbage-and-egg-baked.webp"
+            height="250px"
+            alt="Cabbage_and_egg_pie"              
+          />
+          <br />
+          <input
+            id="cabbage_and_egg_pie"
+            type="radio"
+            name="pie"
+            value="cabbage_and_egg"
+          />
+          Cabbage-and-egg pie
+        </label>
+      </div>
+
+      <br />
+
+      <div>
+        <label for="name">Name:*</label>
+        <input id="name" type="text" placeholder="Enter your name:" pattern="[a-zA-Z]{2,}" required />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="telephone">Mobile:*</label>
+        <input
+          title="Example: +123-456-7890"
+          id="phone"
+          type="tel"
+          placeholder="Enter your phone:"
+          pattern="\+?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="email">E-mail:</label>
+        <input id="email" type="email" placeholder="Enter your E-mail:" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="address">Address:*</label>
+        <input
+          id="address"
+          type="text"
+          placeholder="Enter your address:"
+          pattern="[a-zA-Z]{2,}\s{1}[0-9]{1,3}"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="delivery">Delivery:*</label>
+        <input
+          id="delivery"
+          type="datetime-local"
+          placeholder="Choose the delivery date:"
+          required
+        />
+      </div>
+
+      <br />
+
+      <button type="submit">Place order</button>
+      <button type="reset">Reset order</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-image: url(https://www.fabmood.com/wp-content/uploads/2022/11/thanksgiving-wallpaper-2.jpg);    
+}
+
+form {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 950px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: chocolate;
+}
+
+.form-pies{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 75px; /* Space between columns */
+    max-width: 900px; /* Optional: limit the container width */
+    margin: 0 auto; /* Center the grid on the page */    
+}
+
+img{
+    border-color: chocolate; 
+    border-radius: 5px; 
+    box-shadow: 10px 10px 10px rgba(210, 105, 30, 0.8);
+}

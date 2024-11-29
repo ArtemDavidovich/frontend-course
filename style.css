@@ -1,0 +1,16 @@
+a{
+    color: black;
+}
+
+.main{
+    display: flex;
+    gap: 50px;    
+    justify-content: center;
+    width: 50%;
+}
+
+.work{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
