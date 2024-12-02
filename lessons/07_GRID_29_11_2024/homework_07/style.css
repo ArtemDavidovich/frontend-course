@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+
+body {
+  background-image: url(./images/tekstura-drakon-polosy-chernyy.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: "Silkscreen";
+}
+
+.mk-gallery {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.mk-card-background {
+  position: relative;
+  background-image: url(./images/Mortal_Kombat-logo-1CE5FDB2CD-seeklogo.com.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.background-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2;
+}
+
+.mk-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.mk-card > p,
+h2 {
+  max-width: 195px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+}

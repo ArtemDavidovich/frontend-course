@@ -1,9 +1,17 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bsodwindows10.png/1280px-Bsodwindows10.png);
+    background-size: cover;
+    font-family: "Roboto";
+}
+
 .main{
     display: flex;
-    gap: 50px;    
-    justify-content: center;
-    width: 50%;
+    gap: 200px;    
+    justify-content: center; 
+    
 }
 
 .work{
@@ -13,7 +21,11 @@
 }
 
 a{
-    color: black;
+    color: white;
+}
+
+h1{
+    color: white;
 }
 
 /* стили с псевдоклассом hover, применяются к элементу при наведении на него мышкой */

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Homework 07</title>
+  </head>
+
+  <!-- Задание 1
+Создайте галерею карточек по вкусу (с персонажами, предметами или любой другой тематикой).
+
+Используйте CSS Grid для разметки контейнера-родителя. Сделайте карточки адаптивными, установив минимальную ширину 300px с помощью minmax().
+
+Каждая карточка должна содержать:
+
+Название.
+Изображение.
+Описание.
+Внутри карточки используйте CSS Flexbox для расположения элементов (заголовок, картинка, описание).
+
+Дополнительно: фоном карточки сделайте картинку. Превратите эту картинку в ссылку на сторонний ресурс с подробностями. -->
+
+  <body>
+    <div class="mk-gallery">
+      <div class="mk-card-background">
+        <a
+          href="https://mortalkombat.fandom.com/wiki/Johnny_Cage"
+          target="_blank" class="background-link"
+          ></a>
+        <div class="mk-card">
+          <h2>Johnny Cage</h2>
+          <img src="./images/johnny.png" alt="Johnny Cage" />
+          <p>Action movie star with an extensive martial arts background.</p>
+        </div>
+      </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Kano" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Kano</h2>
+            <img src="./images/kano.png" alt="Kano" />
+            <p>
+              The leader of the Black Dragon clan, he is a ruthless scoundrel
+              and arms dealer.
+            </p>
+          </div>
+        </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Bi-Han" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Sub-Zero</h2>
+            <img src="./images/sub_zero.png" alt="Sub-Zero" />
+            <p>A warrior from the fictional Lin Kuei clan.</p>
+          </div>
+        </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Sonya_Blade" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Sonya Blade</h2>
+            <img src="./images/sonya.png" alt="Sonya Blade" />
+            <p>A military officer with the Special Forces.</p>
+          </div>
+        </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Raiden" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Raiden</h2>
+            <img src="./images/raiden.png" alt="Raiden" />
+            <p>The god of thunder who possesses control over lightning.</p>
+          </div>
+        </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Liu_Kang" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Liu Kang</h2>
+            <img src="./images/liu_kang.png" alt="Liu Kang" />
+            <p>Earthrealm's greatest warrior and champion.</p>
+          </div>
+        </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Scorpion" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Scorpion</h2>
+            <img src="./images/scorpion.png" alt="Scorpion" />
+            <p>
+              A ninja dressed in yellow, his primary weapon is a kunai rope
+              dart.
+            </p>
+          </div>
+        </div>
+      <div class="mk-card-background">
+        <a href="https://mortalkombat.fandom.com/wiki/Goro" target="_blank" class="background-link"
+        ></a>
+          <div class="mk-card">
+            <h2>Goro</h2>
+            <img src="./images/goro.png" alt="Goro" />
+            <p>
+              The Prince of the Shokan and former champion of the Mortal Kombat
+              Tournament.
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <a style="padding: 20px 0px 5px 20px" href="../../../index.html"
+      >Back to main menu</a
+    >
+  </body>
+</html>
