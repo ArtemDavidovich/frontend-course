@@ -7,6 +7,12 @@ body {
   font-family: "Silkscreen";
 }
 
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .mk-gallery {
   display: grid;
   gap: 10px;
