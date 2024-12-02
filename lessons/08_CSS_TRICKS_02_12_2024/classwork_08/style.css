@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* vh - viewport height */
+    min-height: 100vh;    
+}
+
+h1{
+    color: forestgreen;
+}
+
+header{
+    height: 80px;
+    background-color: forestgreen;
+    /* приклеиваем элемент к странице, ВАЖНО указать ниже точку приклеивания в пикселях */
+    position: sticky;
+    top: 0px;
+}
+
+main{
+    /* настройка для флекс-элемента, чтобы он растянулся по всей высоте контейнера родителя */
+    flex: 1;
+    padding: 0px 30px;
+}
+
+footer{
+    height: 50px;
+    background-color: rgb(161, 156, 156);       
+}
+
+.grid-gallery{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* все элементы внутри grid контейнера будут 200px по высоте */
+    /* grid-auto-rows: 200px; */
+}
+
+.grid-gallery section{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: white;
+}
+
+.grid-gallery a{
+    color: black;
+    text-decoration: none;
+}
+
+.grid-gallery a:hover{
+    transform: scale(1.1);
+}
+
+.grid-gallery img{
+    width: 100%;
+    height: 100%;
+    /* задаем картинке правило, чтобы она не растягивалась (по высоте или ширине), а обрезалась под необходимый размер */
+    object-fit: cover;
+    border-radius: 5px;        
+}
+
+/* рамке-контейнеру для картинки задаем жесткую высоту */
+.grid-gallery div{
+    height: 150px;
+}
+
+.grid-gallery a{
+    /* свойство transform будет плавным на 0.3 секунды */
+    transition: transform 0.3s ease;
+}
+
+@media(max-width: 600px){
+    header{
+        background-color: rgb(42, 4, 255);
+    }
+}
+
+@media(max-width: 464px){
+    header{
+        background-color: red
+    }
+
+    .grid-gallery div{
+        height: 150px;
+    }
+}
+
+@media(max-width: 404px){
+    header{
+        background-color: red
+    }
+
+    .grid-gallery div{
+        height: 200px;
+    }
+}

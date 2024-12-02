@@ -7,10 +7,11 @@ body {
   font-family: "Silkscreen";
 }
 
-header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header img {
+  width: 100%; /* Изображение занимает всю ширину контейнера */
+  height: auto; /* Сохраняет пропорции */
+  object-fit: cover; /* Масштабирует изображение, чтобы оно заполнило контейнер */
+  display: block; /* Убирает возможные пробелы под изображением */
 }
 
 .mk-gallery {
