@@ -8,9 +8,11 @@ body{
 }
 
 .main{
-    display: flex;
-    gap: 200px;    
-    justify-content: center; 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 100px;    
+    justify-content: center;
+     margin-left: 400px;
     
 }
 
