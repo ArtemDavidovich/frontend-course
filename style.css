@@ -1,45 +1,109 @@
+/* Добавить footer
+Footer должен быть зафиксирован внизу страницы, если контента на странице мало.
+Если контента в main много, footer должен "уходить вниз" вместе с содержимым страницы.
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+Адаптивность на разных ширинах окна
+Убедитесь, что сайт корректно работает и верстка не "съезжает" на следующих ширинах:
+430px (например, iPhone 14 Pro Max).
+768px (например, iPad Mini).
+Используйте media queries, чтобы на указанных ширинах менялась верстка (например, структура, размеры элементов, шрифты и т.д.).
 
-body{
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bsodwindows10.png/1280px-Bsodwindows10.png);
-    background-size: cover;
-    font-family: "Roboto";
+Подключение шрифтов
+Добавьте шрифты, которые подходят по стилю.
+
+Добавить favicon
+Создайте или найдите подходящий favicon и подключите его к сайту. */
+
+@font-face {
+  font-family: "Matrix";
+  src: url("./fonts/Lunar\ Escape.otf");
 }
 
-.main{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 100px;    
-    justify-content: center;
-     margin-left: 400px;
-    
+body {
+  font-family: "Matrix", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  background-image: url(./images/GwENbByC.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.work{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    padding-left: 20px;
-    padding-bottom: 10px;
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  flex: 1;
+  color: white;
 }
 
-a{
+main a {
+  color: white;
+  text-decoration: none;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(105, 102, 102, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.4s ease;
+}
+
+.work h1 {
+  text-align: center;
+}
+
+footer {
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left:hover {
+  color: rgb(179, 42, 42);
+  transform: scale(1.1);
+}
+
+.left a:hover {
+  text-decoration: underline;
+  color: rgb(179, 42, 42);
+}
+
+.right:hover {
+  color: rgb(42, 101, 179);
+  transform: scale(1.1);
+}
+
+.right a:hover {
+  text-decoration: underline;
+  color: rgb(42, 101, 179);
+}
+
+@media (max-width: 430px) {
+  .work {
+    background-color: rgba(105, 102, 102, 0.4);
+  }
+
+  footer {
     color: white;
+  }
 }
 
-h1{
-    color: white;
-}
+@media (max-width: 768px) {
+  .left {
+    color: rgb(179, 42, 42);
+  }
 
-/* стили с псевдоклассом hover, применяются к элементу при наведении на него мышкой */
-a:hover{
-    text-decoration: underline;
-    color: blueviolet;
-}
-
-a::before{
-    content: "🐱‍🏍";
+  .right {
+    color: rgb(42, 101, 179);
+  }
 }
