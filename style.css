@@ -106,4 +106,8 @@ footer {
   .right {
     color: rgb(42, 101, 179);
   }
+
+  body{
+    transform: scale(0.9);
+  }
 }
