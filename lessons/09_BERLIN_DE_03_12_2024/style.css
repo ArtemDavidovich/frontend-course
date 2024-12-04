@@ -1,202 +1,209 @@
-*{
-    box-sizing: border-box;    
+* {
+  box-sizing: border-box;
 }
 
-body{
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;    
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* -----------------------------HEADER------------------------------ */
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;    
-    background-color: rgb(255, 255, 255);
-    position: sticky;
-    top: 0px;
-    padding: 16px 24px;
-    z-index: 1;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0px;
+  padding: 16px 24px;
+  z-index: 1;
 }
 
-header a{
-    color: black;
-    text-decoration: none; 
+header a {
+  color: black;
+  text-decoration: none;
 }
 
-.header-left{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;    
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
-.header-left h5{
-    margin: 0px;    
+.header-left h5 {
+  margin: 0px;
 }
 
-.header-right{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 36px;    
+.header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
 }
 
-.header-right h5{
-    margin: 0;   
+.header-right h5 {
+  margin: 0;
 }
 
-.header-right a:hover{
-    color: black;
-    text-decoration: underline;
+.header-right a:hover {
+  color: black;
+  text-decoration: underline;
 }
 
-.header-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
-    gap: 8px;
+.header-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  gap: 8px;
 }
 
-.header-icons h6{
-    margin: 0px;    
+.header-icons h6 {
+  margin: 0px;
 }
 
-.header-icons div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; 
-    gap: 5px;   
+.header-icons div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
 }
 
-.header-icons img{
-    height: 33px;        
+.header-icons img {
+  height: 33px;
 }
 
 /* -----------------------------MAIN-PANORAMA-IMAGE---------------------------- */
 
-.panorama_image{    
-    position: relative;
-    height: 450px;
-    background-image: url(./images/shutterstock_1549382906.jpg);
-    background-size: cover;
-    background-position: center;
+.panorama_image {
+  position: relative;
+  height: 450px;
+  background-image: url(./images/shutterstock_1549382906.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-.panorama_text{
-    position: absolute;    
-    left: 110px;
-    bottom: 54px;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    text-shadow: 
-        -1px -1px 0 gray,
-        1px -1px 0 gray, 
-        -1px  1px 0 gray,
-        1px  1px 0 gray;      
-    width: 100%;
+.panorama_text {
+  position: absolute;
+  left: 110px;
+  bottom: 54px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray,
+    1px 1px 0 gray;
+  width: 100%;
 }
 
-.panorama_text h1{
-    margin: 0px;
+.panorama_text h1 {
+  margin: 0px;
 }
 
 /* -----------------------------MAIN-GALLERY---------------------------- */
 
-.gallery_container{
-    display: grid;
-    grid-template-columns: 110px 980px 110px;
-    grid-template-rows: repeat(5, 480px);
-    margin-top: 90px;
+.gallery_container {
+  display: grid;
+  grid-template-columns: 110px 980px 110px;
+  grid-template-rows: repeat(5, 480px);
+  margin-top: 90px;
 }
 
-.gallery{
-    grid-column-start: 2;
-    display: flex;
-    flex-direction: column;
+.gallery {
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
 }
 
-.gallery_variants{
-    display: flex;
-    gap: 20px;
+.gallery_variants {
+  display: flex;
+  gap: 20px;
 }
 
-.gallery_variants_box{
-    display: flex;
-    flex-direction: column;
-    width: 100%;    
+.gallery_variants_box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.gallery_variants_box a{
-    text-decoration: none;
-    color: black;
+.gallery_variants_box a {
+  text-decoration: none;
+  color: black;
 }
 
-.gallery_variants_box img{
-    object-fit: cover;
-    width: 100%;
-    height: auto;
+.gallery_variants_box img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 
-.gallery_variants_box_arrow{
-    width: 15px !important;
-    height: auto !important;
-    object-fit: contain !important;    
+.gallery_variants_box_arrow {
+  width: 15px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
 
+.gallery_variants_box_images {
+  position: relative;
+}
+
+.gallery_background_arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15% !important; 
+  height: auto;
+  z-index: 1;
 }
 
 /* -----------------------------FOOTER---------------------------- */
 
-footer{
-    display: flex;
-    flex-direction: column;
-    background-color: #545454;
-    padding: 16px 24px 70px 0px;
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #545454;
+  padding: 16px 24px 70px 0px;
 }
 
-.footer_logo img{
-    width: 140px;
-    padding: 17px 0px 7px 24px;      
+.footer_logo img {
+  width: 140px;
+  padding: 17px 0px 7px 24px;
 }
 
-.footer_box{
-    display: flex;
-    margin: 0px 80px 25px 70px;
-    /* padding-left: 70px;
+.footer_box {
+  display: flex;
+  margin: 0px 80px 25px 70px;
+  /* padding-left: 70px;
     margin-bottom: 25px;
     margin-right: 80px;    
     width: 300px; */
 }
 
-.footer_links{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    gap: 12px;
-    margin: 0px 0px 8px 32px;      
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 12px;
+  margin: 0px 0px 8px 32px;
 }
 
-.footer_links h3, h4{
-    margin: 0px;
+.footer_links h3,
+h4 {
+  margin: 0px;
 }
 
-.footer_links a{
-    text-decoration: none;
-    color: white;
+.footer_links a {
+  text-decoration: none;
+  color: white;
 }
 
-.footer_sign{
-    color: white;
-    margin-top: 20px;
-    margin-left: 92px;
+.footer_sign {
+  color: white;
+  margin-top: 20px;
+  margin-left: 92px;
 }
-
-
-
