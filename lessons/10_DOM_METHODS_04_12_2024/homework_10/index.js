@@ -12,7 +12,7 @@ btn.addEventListener('click', () => {
   clonedBtn.style.color = 'white'
   clonedBtn.style.backgroundColor = '#a78b71 '
   clonedBtn.textContent = 'Я изменю тебя'
-  document.body.append(clonedBtn) // альтернатива - document.body.appendChild - добавляет только узлы, НЕ добавляет строки (это более старый метод)
+  document.body.append(clonedBtn) // альтернатива - document.body.appendChild - добавляет только один элемент, а также добавляет только узлы, НЕ добавляет строки (это более старый метод)
 })
 
 // здесь можете создать EventListener для второй кнопки
