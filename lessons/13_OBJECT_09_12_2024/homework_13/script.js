@@ -25,7 +25,11 @@ const bankAccount = {
         this.balance = this.balance + sum
     },
     withdraw(sum){
-        this.balance = this.balance - sum
+        if(sum <= this.balance){
+            this.balance = this.balance - sum
+        } else {
+            console.log('Not enough funds. Please, insert valid amount.')
+        }
     },
     checkBalance(){
         console.log(`Current balance: ${this.balance}`)
@@ -39,6 +43,9 @@ bankAccount.checkBalance()
 bankAccount.deposit(300)
 bankAccount.checkBalance()
 
-// checking 'withdraw' function
+// checking 'withdraw' function with valid amount
 bankAccount.withdraw(150)
 bankAccount.checkBalance()
+
+// checking 'withdraw' function with invalid amount
+bankAccount.withdraw(200)
