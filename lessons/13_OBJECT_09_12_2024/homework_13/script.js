@@ -22,30 +22,68 @@ const bankAccount = {
     accountHolderName: "Alice",
     balance: 0,
     deposit(sum){
-        this.balance = this.balance + sum
+        if(sum > 0){
+        this.balance += sum
+        alert(`Current balance: ${this.balance}`)
+        }
     },
     withdraw(sum){
-        if(sum <= this.balance){
-            this.balance = this.balance - sum
+        if(sum <= this.balance && sum > 0){
+            this.balance -= sum
+            alert(`Current balance: ${this.balance}`)
         } else {
-            console.log('Not enough funds. Please, insert valid amount.')
+            alert('Not enough funds. Please, insert valid amount.')
         }
     },
     checkBalance(){
-        console.log(`Current balance: ${this.balance}`)
+        alert(`Current balance: ${this.balance}`)
     }
 }
 
-// checking 'checkBalance' function
-bankAccount.checkBalance()
+// Уведомление пользователя
+// alert("Привет из модального окна")
 
-// checking 'deposit' function
-bankAccount.deposit(300)
-bankAccount.checkBalance()
+// Подтверждение/Отказ от пользователя (Boolean)
+// let answer = confirm("Хотите закрыть страницу?")
+// console.log(answer)
 
-// checking 'withdraw' function with valid amount
-bankAccount.withdraw(150)
-bankAccount.checkBalance()
+// Ответ от пользователя (String | null)
+// answer = prompt("Введите ваше имя:")
+// console.log(answer)
+const bank = []
 
-// checking 'withdraw' function with invalid amount
-bankAccount.withdraw(200)
+function createAccount() {
+    const nameInput = document.getElementById('name')
+    const name = nameInput.value.trim()
+
+    // falsy: null, '', 0, undefined, NaN
+    if(name ){
+        bank.push({
+            ...bankAccount,
+            accountNumber: bank.length + 1,
+            accountHolderName: name
+        })
+        alert('Account successfully created')
+    } else {
+        alert('Invalid input. Please, enter a valid name.')
+    }
+
+    nameInput.value = ''
+    console.log(bank)
+}
+
+function showAccounts(){
+    // removing 'hidden' class to show up the section 'show' with all bank accounts
+    const sectionShow = document.getElementById('show')
+    sectionShow.classList.remove('hidden')
+
+    const accountsList = document.getElementById('accountList')
+
+    accountsList.innerHTML = ''
+    
+    bank.forEach(account => {
+        const li = document.createElement('li')
+        li.textContent = `Name: ${account.accountHolderName}; Balance: ${account.balance}`
+        accountsList.append(li)
+    });
+}
