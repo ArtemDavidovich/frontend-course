@@ -23,6 +23,19 @@ section{
     list-style: none;
 }
 
+.accountLine{
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    gap: 10px;
+    width: 500px;    
+}
+
+.accountLineButtons{
+    display: flex;
+    gap: 3px;    
+}
+
 button{
     margin: 10px 5px;
     padding: 10px 15px;

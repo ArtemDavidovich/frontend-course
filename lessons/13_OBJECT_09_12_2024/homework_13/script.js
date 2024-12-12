@@ -43,14 +43,18 @@ bankAccount.checkBalance = function () {
   alert(`Current balance: ${this.balance}`);
 };
 
-// Уведомление пользователя
+bankAccount.delete = function () {
+  this.bankAccount.splice();
+};
+
+// ! Уведомление пользователя
 // alert("Привет из модального окна")
 
-// Подтверждение/Отказ от пользователя (Boolean)
+// ! Подтверждение/Отказ от пользователя (Boolean)
 // let answer = confirm("Хотите закрыть страницу?")
 // console.log(answer)
 
-// Ответ от пользователя (String | null)
+// ! Ответ от пользователя (String | null)
 // answer = prompt("Введите ваше имя:")
 // console.log(answer)
 
@@ -88,53 +92,166 @@ function showAccounts() {
 
   // (_, index) - if we don't need the element, only its index
   bank.forEach((account, index) => {
-    // const li = document.createElement('li')
-    // li.textContent = `Name: ${account.accountHolderName}; Balance: ${account.balance}`
-    // accountsList.append(li)
-
-    accountsList.innerHTML += `<li>${index + 1}. ID: ${
+    accountsList.innerHTML += `<div class="accountLine"><li>${index + 1}. ID: ${
       account.accountNumber
-    }; Name: ${account.accountHolderName}; Balance: ${account.balance}</li>`;
+    }; Name: ${account.accountHolderName}; Balance: ${account.balance}</li>
+      <div class="accountLineButtons">
+        <button class="editButton">Edit</button>
+        <button class="deleteButton">Delete</button></div></div>`;
+
+    accountsList.onclick = function (event) {
+      if (event.target.classList.contains("deleteButton")) {
+        // Remove the account from the bank array
+        bank.splice(index, 1);
+
+        // Remove the corresponding line from the DOM
+        const accountLine = event.target.parentElement;
+        accountLine.remove();
+
+        showAccounts();
+      }
+
+      if (event.target.classList.contains("editButton")) {
+        const newAccountHolderName = prompt(
+          "Enter corrected account holder Name:"
+        );
+
+        if(newAccountHolderName){
+          account.accountHolderName = newAccountHolderName
+        } else if(newAccountHolderName === null){
+          
+        }
+        else {
+          alert("Error! You've entered invalid Name. Enter valid Name.")
+        }
+        
+        showAccounts();
+      }
+    };    
   });
 }
 
-const withdraw = document.getElementById("withdraw");
 const deposit = document.getElementById("deposit");
+const withdraw = document.getElementById("withdraw");
 
 deposit.onclick = function () {
-  const accountIdInput = document.getElementById("accountId");
-  const accountId = Number(accountIdInput.value.trim());
-
-  const amountInput = document.getElementById("amount");
-  const amount = Number(amountInput.value.trim());
-
-  bank.forEach((account) => {
-    if (account.accountNumber === accountId) {
-      account.deposit(amount);
-    }
-  });
-
-  accountIdInput.value = "";
-  amountInput.value = "";
-
-  showAccounts();
+  operation("deposit");
 };
 
 withdraw.onclick = function () {
+  operation("withdraw");
+};
+
+function operation(operator) {
   const accountIdInput = document.getElementById("accountId");
   const accountId = Number(accountIdInput.value.trim());
 
   const amountInput = document.getElementById("amount");
   const amount = Number(amountInput.value.trim());
 
-  bank.forEach((account) => {
-    if (account.accountNumber === accountId) {
-      account.withdraw(amount);
+  const accountFind = bank.find(
+    (e) => e.accountNumber.toString() === accountId
+  );
+
+  if (accountFind) {
+    if (operator === "deposit") {
+      accountFind.deposit(amount);
+    } else {
+      accountFind.withdraw(amount);
     }
-  });
+  } else {
+    alert("Account not found");
+  }
 
   accountIdInput.value = "";
   amountInput.value = "";
 
   showAccounts();
-};
+}
+
+// deposit.onclick = function () {
+//   const accountIdInput = document.getElementById("accountId");
+//   const accountId = Number(accountIdInput.value.trim());
+
+//   const amountInput = document.getElementById("amount");
+//   const amount = Number(amountInput.value.trim());
+
+//   bank.forEach((account) => {
+//     if (account.accountNumber === accountId) {
+//       account.deposit(amount);
+//     }
+//   });
+
+//   const accountFind = bank.find(account => account.accountNumber === accountId)
+
+//   accountIdInput.value = "";
+//   amountInput.value = "";
+
+//   showAccounts();
+// };
+
+// withdraw.onclick = function () {
+//   const accountIdInput = document.getElementById("accountId");
+//   const accountId = Number(accountIdInput.value.trim());
+
+//   const amountInput = document.getElementById("amount");
+//   const amount = Number(amountInput.value.trim());
+
+//   bank.forEach((account) => {
+//     if (account.accountNumber === accountId) {
+//       account.withdraw(amount);
+//     }
+//   });
+
+//   accountIdInput.value = "";
+//   amountInput.value = "";
+
+//   showAccounts();
+// };
+
+// DRY (Don't repeat yourself)
+
+// const answer = prompt("Введите Ваше имя");
+// if (typeof answer === "string") {
+//   String
+// }
+// if (answer) {
+//   String (кроме пустой строки)
+// }
+
+// function plus(a, b) {
+//   calculator(5, 10, "+");
+// }
+
+// function minus() {
+//   calculator(5, 10, "-");
+// }
+
+// function multiply() {
+//   calculator(5, 10, "*");
+// }
+
+// function division() {
+//   calculator(5, 10, "/");
+// }
+
+// function calculator(a, b, operator) {
+//   if (operator === '+') {
+//     return a + b;
+//   }
+//   if (operator === '-') {
+//     return a - b;
+//   }
+//   if (operator === '*') {
+//     return a * b;
+//   }
+//   if (operator === '/') {
+//     return a / b;
+//   }
+// }
+
+// undefined
+// console.log(calculator(5, 10, "+"));
+// console.log(calculator(5, 10, "-"));
+// calculator(5, 10, "*");
+// calculator(5, 10, "/");
