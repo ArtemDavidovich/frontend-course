@@ -7,11 +7,12 @@ body{
     color: #333;
 }
 
-#create{
+.create{
     display: flex;
     align-items: center;
     gap: 4px;
 }
+
 section{
     margin: 20px;
     padding: 20px;
