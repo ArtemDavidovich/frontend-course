@@ -96,13 +96,19 @@ function showAccounts() {
       account.accountNumber
     }; Name: ${account.accountHolderName}; Balance: ${account.balance}</li>
       <div class="accountLineButtons">
-        <button class="editButton">Edit</button>
-        <button class="deleteButton">Delete</button></div></div>`;
+        <button class="editButton" data-index="${index}">Edit</button>
+        <button class="deleteButton" data-index="${index}">Delete</button></div></div>`;
+    //data-index helps to reach each definite line. we can call it with element.dataset.index
 
     accountsList.onclick = function (event) {
+      //also possible to create a variable for event.target
+      // const button = event.target 
+
       if (event.target.classList.contains("deleteButton")) {
+        const accountIndex = Number(event.target.dataset.index);
+
         // Remove the account from the bank array
-        bank.splice(index, 1);
+        bank.splice(accountIndex, 1);
 
         // Remove the corresponding line from the DOM
         const accountLine = event.target.parentElement;
@@ -112,22 +118,22 @@ function showAccounts() {
       }
 
       if (event.target.classList.contains("editButton")) {
+        const accountIndex = Number(event.target.dataset.index);
+
         const newAccountHolderName = prompt(
           "Enter corrected account holder Name:"
         );
 
-        if(newAccountHolderName){
-          account.accountHolderName = newAccountHolderName
-        } else if(newAccountHolderName === null){
-          
+        if (newAccountHolderName) {
+          bank[accountIndex].accountHolderName = newAccountHolderName;
+        } else if (newAccountHolderName === null) {
+        } else {
+          alert("Error! You've entered invalid Name. Enter valid Name.");
         }
-        else {
-          alert("Error! You've entered invalid Name. Enter valid Name.")
-        }
-        
+
         showAccounts();
       }
-    };    
+    };
   });
 }
 
