@@ -80,62 +80,87 @@ function createAccount() {
   console.log(bank);
 }
 
-function showAccounts() {
-  // removing 'hidden' class to show up the section 'show' with all bank accounts
-  const sectionShow = document.getElementById("show");
-  sectionShow.classList.remove("hidden");
+const showAccounts = document.getElementById("showButtons"); // access to div with show buttons
+const accountsList = document.getElementById("accountList"); // access to List <ol>
 
-  const accountsList = document.getElementById("accountList");
+function updateAccountList(filterClass) {
+  const sectionShow = document.getElementById("show");  
 
-  // cleaning the list before each iteration (not to make duplicates)
-  accountsList.innerHTML = "";
+  if (bank.length > 0) {
+    sectionShow.classList.remove("hidden");
+  } else {
+    alert("There are no created accounts yet.");
+    return;
+  }
 
-  // (_, index) - if we don't need the element, only its index
+  accountsList.innerHTML = ""; // Очистка списка перед обновлением
+
+  // Фильтрация аккаунтов
   bank.forEach((account, index) => {
-    accountsList.innerHTML += `<div class="accountLine"><li>${index + 1}. ID: ${
-      account.accountNumber
-    }; Name: ${account.accountHolderName}; Balance: ${account.balance}</li>
-      <div class="accountLineButtons">
-        <button class="editButton" data-index="${index}">Edit</button>
-        <button class="deleteButton" data-index="${index}">Delete</button></div></div>`;
-    //data-index helps to reach each definite line. we can call it with element.dataset.index
-
-    accountsList.onclick = function (event) {
-      //also possible to create a variable for event.target
-      // const button = event.target 
-
-      if (event.target.classList.contains("deleteButton")) {
-        const accountIndex = Number(event.target.dataset.index);
-
-        // Remove the account from the bank array
-        bank.splice(accountIndex, 1);
-
-        // Remove the corresponding line from the DOM
-        const accountLine = event.target.parentElement;
-        accountLine.remove();
-
-        showAccounts();
-      }
-
-      if (event.target.classList.contains("editButton")) {
-        const accountIndex = Number(event.target.dataset.index);
-
-        const newAccountHolderName = prompt(
-          "Enter corrected account holder Name:"
-        );
-
-        if (newAccountHolderName) {
-          bank[accountIndex].accountHolderName = newAccountHolderName;
-        } else if (newAccountHolderName === null) {
-        } else {
-          alert("Error! You've entered invalid Name. Enter valid Name.");
-        }
-
-        showAccounts();
-      }
-    };
+    if (
+      filterClass === "showAll" ||
+      (filterClass === "showOverThousand" && account.balance >= 1000) ||
+      (filterClass === "showUnderThousand" && account.balance < 1000)
+    ) {
+      printAccount(account, index);
+    }
   });
 }
+
+function printAccount(account, index) {
+  accountsList.innerHTML += `<div class="accountLine"><li>ID: ${account.accountNumber}; Name: ${
+    account.accountHolderName
+  }; Balance: ${account.balance}</li>
+  <div class="accountLineButtons">
+    <button class="editButton" data-index="${index}">Edit</button>
+    <button class="deleteButton" data-index="${index}">Delete</button></div></div>`;
+  //data-index helps to reach each definite line. we can call it with element.dataset.index
+}
+
+showAccounts.onclick = function (event) {
+  if (event.target.classList.contains("showAll")) {
+    updateAccountList("showAll");
+  } else if (event.target.classList.contains("showOverThousand")) {
+    updateAccountList("showOverThousand");
+  } else if (event.target.classList.contains("showUnderThousand")) {
+    updateAccountList("showUnderThousand");
+  }
+};
+
+accountsList.onclick = function (event) {
+  //also possible to create a variable for event.target
+  // const button = event.target
+
+  if (event.target.classList.contains("deleteButton")) {
+    const accountIndex = Number(event.target.dataset.index);
+
+    // Remove the account from the bank array
+    bank.splice(accountIndex, 1);
+
+    // Remove the corresponding line from the DOM
+    const accountLine = event.target.parentElement;
+    accountLine.remove();
+
+    updateAccountList("showAll")
+  }
+
+  if (event.target.classList.contains("editButton")) {
+    const accountIndex = Number(event.target.dataset.index);
+
+    const newAccountHolderName = prompt(
+      "Enter corrected account holder Name:"
+    );
+
+    if (newAccountHolderName) {
+      bank[accountIndex].accountHolderName = newAccountHolderName;
+    } else if (newAccountHolderName === null) {
+    } else {
+      alert("Error! You've entered invalid Name. Enter valid Name.");
+    }
+
+    updateAccountList("showAll") 
+  }
+};
 
 const deposit = document.getElementById("deposit");
 const withdraw = document.getElementById("withdraw");
@@ -155,9 +180,7 @@ function operation(operator) {
   const amountInput = document.getElementById("amount");
   const amount = Number(amountInput.value.trim());
 
-  const accountFind = bank.find(
-    (e) => e.accountNumber.toString() === accountId
-  );
+  const accountFind = bank.find((e) => e.accountNumber === accountId);
 
   if (accountFind) {
     if (operator === "deposit") {
@@ -172,7 +195,7 @@ function operation(operator) {
   accountIdInput.value = "";
   amountInput.value = "";
 
-  showAccounts();
+  updateAccountList("showAll")  
 }
 
 // deposit.onclick = function () {

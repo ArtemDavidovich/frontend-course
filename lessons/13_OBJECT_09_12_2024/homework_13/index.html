@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="./script.js"></script>
     <title>Homework 13: object</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="create">
-        <label for="name">Name:</label>
-        <input type="text" id="name">
-        <button onclick="createAccount()">Create new account</button>
-        <button onclick="showAccounts()">Show all accounts</button>
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+      <button onclick="createAccount()">Create new account</button>
+      <div id="showButtons">
+        <button class="showAll">Show all accounts</button>
+        <button class="showOverThousand">Balance over 1000</button>
+        <button class="showUnderThousand">
+          Balance under 1000
+        </button>
+      </div>
     </section>
 
     <section id="show" class="hidden">
-        <!-- 
+      <!-- 
                 ul - unordered list
                 ol - ordered list
                 -->
-        <ol id="accountList">
-            <!-- li - list item -->
-        </ol>
-    </section>    
-
-    <section id="change">
-        <label for="accountId">Account ID:</label>
-        <input type="text" id="accountId">
-
-        <label for="amount">Amount:</label>        
-        <input type="number" id="amount"> <!--  -->
-
-        <!-- Обработчик событий Event Listener -->
-        <button id="deposit">Deposit</button>
-        <button id="withdraw">Withdraw</button>
+      <ol id="accountList">
+        <!-- li - list item -->
+      </ol>
     </section>
 
-    <div><a style="padding: 20px 0px 5px 20px" href="../../../index.html"
+    <section id="change">
+      <label for="accountId">Account ID:</label>
+      <input type="text" id="accountId" />
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" />
+      <!--  -->
+
+      <!-- Обработчик событий Event Listener -->
+      <button id="deposit">Deposit</button>
+      <button id="withdraw">Withdraw</button>
+    </section>
+
+    <div>
+      <a style="padding: 20px 0px 5px 20px" href="../../../index.html"
         >Back to main menu</a
-      ></div>
-</body>
+      >
+    </div>
+  </body>
 </html>
