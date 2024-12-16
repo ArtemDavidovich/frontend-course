@@ -5,15 +5,14 @@
 
 body{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: wrap;    
 }
 
-img{
-    height: 300px;
-}
+
 
 .character-info{
+    width: 330px;
+    margin: 15px 20px;   
     display: flex;
     flex-direction: column;   
     border: 1px dotted;
@@ -22,8 +21,7 @@ img{
 
 .character-text{
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: column;    
     padding: 5px 25px;
     background-color:rgb(204, 212, 129);    
 }
