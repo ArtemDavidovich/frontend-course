@@ -134,6 +134,10 @@ accountsList.onclick = function (event) {
   if (event.target.classList.contains("deleteButton")) {
     const accountIndex = Number(event.target.dataset.index);
 
+    const deleteConfirm = confirm("Do you really want to delete this account?")
+
+    if(deleteConfirm){
+
     // Remove the account from the bank array
     bank.splice(accountIndex, 1);
 
@@ -142,6 +146,7 @@ accountsList.onclick = function (event) {
     accountLine.remove();
 
     updateAccountList("showAll")
+    }
   }
 
   if (event.target.classList.contains("editButton")) {
