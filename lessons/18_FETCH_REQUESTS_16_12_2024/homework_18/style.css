@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+img{
+    height: 300px;
+}
+
+.character-info{
+    display: flex;
+    flex-direction: column;   
+    border: 1px dotted;
+    
+}
+
+.character-text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 25px;
+    background-color:rgb(204, 212, 129);    
+}
