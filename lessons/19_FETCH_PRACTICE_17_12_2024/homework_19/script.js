@@ -28,7 +28,7 @@ async function fetchProducts(){
         imgWrapper.className = 'img-wrapper'
 
         // product's price
-        const priceProd = document.createElement('p')
+        const priceProd = document.createElement('h4')
         priceProd.textContent = `Price: ${product.price}$`
 
         // product's description
