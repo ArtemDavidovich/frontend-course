@@ -1,0 +1,34 @@
+
+
+.weather-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dotted black;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 200px;
+    padding: 0px 10px 5px;
+    margin: 5px 15px;
+    background-color:aquamarine;
+    color: rgb(184, 21, 48);
+}
+
+.weather-box > h3{
+    align-self: center;
+}
+
+.weather-box > h4{
+    margin: 0px;
+}
+
+.forecast-box{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.forecast-box > h4{
+    margin: 0px;
+}
+
