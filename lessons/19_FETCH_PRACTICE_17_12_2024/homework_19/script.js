@@ -23,7 +23,7 @@ async function fetchProducts(){
         // product's image
         const imgProd = document.createElement('img')
         imgProd.alt = product.title
-        imgProd.src = product.images
+        imgProd.src = product.images[0]
         const imgWrapper = document.createElement('div')
         imgWrapper.className = 'img-wrapper'
 
