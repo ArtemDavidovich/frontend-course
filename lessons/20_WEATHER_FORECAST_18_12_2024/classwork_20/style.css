@@ -3,10 +3,14 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
     background-image: url('https://miro.medium.com/v2/resize:fit:5120/1*GsImz-edoeuqCMfKxDus0w.jpeg');
     background-size:auto;     
+    background-size: cover; 
     background-repeat: no-repeat;
+    background-position: center;
     color: rgb(120, 7, 212);
+    
 }
 
 .weather-box{
@@ -24,6 +28,7 @@ body{
     color: rgb(255, 255, 255);
     text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray,
     1px 1px 0 gray;
+    
 }
 
 .weather-box > h3{
