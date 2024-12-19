@@ -1,3 +1,25 @@
+const loader = document.getElementById('loader');
+const weatherContainer = document.getElementById('weather-box');
+
+// Показать лоадер
+function showLoader() {
+  loader.classList.toggle('hidden'); // Убираем класс 'hidden', чтобы показать лоадер
+  weatherContainer.classList.toggle('hidden'); // Скрываем контейнер с погодой
+}
+
+// Скрыть лоадер
+function hideLoader() {
+  loader.classList.toggle('hidden'); // Добавляем класс 'hidden', чтобы скрыть лоадер
+  weatherContainer.classList.toggle('hidden'); // Показываем контейнер с погодой
+}
+
+// Имитация загрузки данных
+showLoader(); // Показываем лоадер
+
+setTimeout(() => {
+  hideLoader(); // Скрываем лоадер через 3 секунды
+}, 3000);
+
 const weatherBox  = document.getElementById('weather-box')
 const forecastBox = document.createElement('div')
 forecastBox.className = 'forecast-box'
@@ -7,22 +29,22 @@ async function fetchWeather(){
     const res = await fetch('https://get.geojs.io/v1/ip/geo.json')
     const data = await res.json()
     
-    const city = document.createElement('h3')
+    const city = document.createElement('h2')
     city.textContent = data.city
 
-    const latitude = document.createElement('h4')
+    const latitude = document.createElement('h3')
     latitude.textContent = `Latitude: ${data.latitude}`
 
-    const longitude = document.createElement('h4')
+    const longitude = document.createElement('h3')
     longitude.textContent = `Longitude: ${data.longitude}`
     
     //weather
     const res2 = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${data.latitude}&longitude=${data.longitude}&current_weather=true`)
     const data2 = await res2.json()
     
-    const temperatureText = document.createElement('h4')
-    const windspeedText = document.createElement('h4') 
-    const weathercodeText = document.createElement('h4')   
+    const temperatureText = document.createElement('h3')
+    const windspeedText = document.createElement('h3') 
+    const weathercodeText = document.createElement('h3')   
 
     // * деструктуризация
     const {temperature, windspeed, weathercode} = data2.current_weather

@@ -1,34 +1,79 @@
-
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://miro.medium.com/v2/resize:fit:5120/1*GsImz-edoeuqCMfKxDus0w.jpeg');
+    background-size:auto;     
+    background-repeat: no-repeat;
+    color: rgb(120, 7, 212);
+}
 
 .weather-box{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border: 1px dotted black;
+    align-items: center;
+    text-align: center;
+    border: 1px dotted rgb(16, 117, 95);;
     border-radius: 15px;
     width: fit-content;
-    max-width: 200px;
+    width: 230px;
     padding: 0px 10px 5px;
     margin: 5px 15px;
-    background-color:aquamarine;
-    color: rgb(184, 21, 48);
+    background-color:rgba(25, 152, 236, 0.2);
+    color: rgb(120, 7, 212);
 }
 
 .weather-box > h3{
-    align-self: center;
-}
-
-.weather-box > h4{
     margin: 0px;
 }
 
+.weather-box > h1{
+    margin: 0px;
+    color: crimson;
+}
+
+.weather-box > h2{
+   text-decoration: underline;
+}
 .forecast-box{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.forecast-box > h4{
+.forecast-box > h3{
     margin: 0px;
+    align-self: center;
 }
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 0.7s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hidden {
+    display: none; /* Скрывает элемент */
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
