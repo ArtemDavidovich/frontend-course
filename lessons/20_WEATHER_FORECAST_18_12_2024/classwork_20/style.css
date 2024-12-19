@@ -21,7 +21,9 @@ body{
     padding: 0px 10px 5px;
     margin: 5px 15px;
     background-color:rgba(25, 152, 236, 0.2);
-    color: rgb(120, 7, 212);
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray,
+    1px 1px 0 gray;
 }
 
 .weather-box > h3{
@@ -30,7 +32,7 @@ body{
 
 .weather-box > h1{
     margin: 0px;
-    color: crimson;
+    color: rgb(238, 255, 0);
 }
 
 .weather-box > h2{
